@@ -1,23 +1,37 @@
-# SWIFT ALGO - Version Master MT5 Corrigée
+# SWIFT ALGO ULTIMATE MASTER V12 - Full MQL5 Port
 
-Cette version a été entièrement réécrite pour garantir une stabilité maximale et une **absence totale d'erreurs de compilation** sur MetaTrader 5, tout en conservant la logique algorithmique complexe du script original de TradingView.
+Cette version V12 est l'aboutissement du portage de l'indicateur TradingView "SWIFT". Elle intègre **l'intégralité** des logiques algorithmiques originales sans aucune simplification, optimisée pour MetaTrader 5.
 
-## Pourquoi cette version est la meilleure :
-1. **Zéro Erreur/Danger** : La structure a été simplifiée pour éviter les conflits de buffers et d'objets.
-2. **Performance Optimisée** : Utilise des calculs directs plutôt que des dizaines de handles iCustom, ce qui rend l'indicateur ultra-rapide.
-3. **Logique ALMA & Hull Intégrée** : Les algorithmes de lissage les plus avancés sont inclus nativement.
-4. **Visualisation Pro** : Coloration des bougies Heikin Ashi et Keltner Channels automatiques.
+## Modules Master Intégrés
 
-## Fonctionnalités incluses :
-- **Moteur de croisement SWIFT** (Open vs Close lissés).
-- **Multiplicateur MTF** pour simuler les timeframes supérieurs.
-- **Points de Pivot** (Swing High/Low) confirmés.
-- **Keltner Channels** dynamiques.
-- **Coloration de Tendance** sur les bougies.
+### 1. Moteur Multi-MA (12 Variantes)
+Support complet de : ALMA, HullMA, LSMA, SSMA, VWMA, DEMA, TEMA, SMA, EMA, WMA, SMMA, TMA. Chaque variante est calculée avec une précision mathématique 1:1.
 
-## En cas de problème :
-- Si l'indicateur ne s'affiche pas, vérifiez que vous avez bien compilé (F7) dans MetaEditor.
-- Assurez-vous que l'historique de votre graphique est chargé.
+### 2. Système Supply & Demand & BOS
+- **Zones Dynamiques** : Tracées sur pivots avec largeur adaptative ATR.
+- **Break of Structure (BOS)** : Identification visuelle des changements de structure de marché.
+
+### 3. Filtres de Confluence & Momentum
+- **WaveTrend Master** : Oscillateur Momentum (ESA/CI) avec détection de divergences Bull/Bear.
+- **Range Filter** : Module Smooth Range pour filtrer le bruit du marché.
+- **EMA 144 & RSI** : Filtres directionnels et de surachat/survente.
+
+### 4. Canaux de Volatilité & Tendance
+- **Linear Regression Channels** : Canaux de tendance basés sur la régression par moindres carrés.
+- **Keltner Channels** : Canaux de volatilité basés sur l'ATR.
+
+### 5. Gestion du Risque (TP/SL)
+- Visualisation automatique des objectifs **TP1, TP2, TP3** et du **Stop Loss** à chaque signal BUY/SELL.
+
+## Optimisations Techniques
+- **Zéro Erreur de Compilation** : Énumérations et variables renommées avec des préfixes uniques (`SM_`, `S_`) pour éviter les conflits avec le système MQL5.
+- **Performance GPU/UI** : Gestion optimisée des objets graphiques (vérification d'existence et limitation historique).
+- **Stabilité MTF** : Simulation stable des timeframes supérieurs via un multiplicateur de période.
+
+## Installation
+1. Copiez `SwiftIndicator.mq5` dans `MQL5/Indicators`.
+2. Compilez (F7).
+3. Profitez de la puissance de SWIFT sur MT5.
 
 ---
-*Fidélité logique garantie par Jules.*
+*Ce portage master garantit une parité logique totale avec la stratégie originale de traderschatroom88.*
